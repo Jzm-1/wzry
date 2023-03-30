@@ -24,7 +24,7 @@ for each in all_content:
     except:
         print("未知异常")
         continue
-    with open(f"wzry/{cname}/{cname}.jpg", "wb") as f:
+    with open(f"王者荣耀皮肤/{cname}/{cname}.jpg", "wb") as f:
         f.write(resp.content)
     print(f"正在保存{cname}")
     time.sleep(1)
@@ -50,7 +50,7 @@ for each in all_content:
         else:
             pf_name = each
         resp = requests.get(f"{url3}{ename}/{ename}-bigskin-{i+1}.jpg", headers=headers)
-        with open(f"wzry/{cname}/{pf_name}.jpg", "wb") as f:
+        with open(f"王者荣耀皮肤/{cname}/{pf_name}.jpg", "wb") as f:
             f.write(resp.content)
         print(f"正在保存{pf_name}")
         time.sleep(1)
