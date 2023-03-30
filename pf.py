@@ -14,7 +14,7 @@ url3 = "https://game.gtimg.cn/images/yxzj/img201606/skin/hero-info/"
 for each in all_content:
     cname = each.get("cname")
     ename = str(each.get("ename"))
-    pathlib.Path(f'/home/王者荣耀皮肤/{cname}').mkdir()
+    pathlib.Path(f'/data/wzry/王者荣耀皮肤/{cname}').mkdir()
 
 for each in all_content:
     cname = each.get("cname")
@@ -24,7 +24,7 @@ for each in all_content:
     except:
         print("未知异常")
         continue
-    with open(f"{cname}/{cname}.jpg", "wb") as f:
+    with open(f"wzry/{cname}/{cname}.jpg", "wb") as f:
         f.write(resp.content)
     print(f"正在保存{cname}")
     time.sleep(1)
@@ -50,7 +50,7 @@ for each in all_content:
         else:
             pf_name = each
         resp = requests.get(f"{url3}{ename}/{ename}-bigskin-{i+1}.jpg", headers=headers)
-        with open(f"{cname}/{pf_name}.jpg", "wb") as f:
+        with open(f"wzry/{cname}/{pf_name}.jpg", "wb") as f:
             f.write(resp.content)
         print(f"正在保存{pf_name}")
         time.sleep(1)
